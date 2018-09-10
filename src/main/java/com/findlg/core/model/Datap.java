@@ -1,32 +1,14 @@
 package com.findlg.core.model;
 
 public class Datap {
-	private String dataprovider;
-	public String getDataprovider() {
+	private Dataprovider dataprovider;
+
+	public Dataprovider getDataprovider() {
 		return dataprovider;
 	}
 
-	public void setDataprovider(String dataprovider) {
+	public void setDataprovider(Dataprovider dataprovider) {
 		this.dataprovider = dataprovider;
-	}
-
-	public datapoint[] datapoint;
-
-	public datapoint[] getDatapoint() {
-		return datapoint;
-	}
-
-	public void setDatapoint(datapoint[] datapoint) {
-		this.datapoint = datapoint;
-	}
-
-	public Datap(com.findlg.core.model.datapoint[] datapoint) {
-		super();
-		this.datapoint = datapoint;
-	}
-
-	public Datap() {
-		
 	}
 	
 

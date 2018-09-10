@@ -13,10 +13,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.findlg.core.model.Application;
+import com.findlg.core.model.Categeroy;
+//import com.findlg.core.model.Categery;
+import com.findlg.core.model.Category;
 import com.findlg.core.model.ChartContainer;
 import com.findlg.core.model.Data;
-import com.findlg.core.model.Datap;
 import com.findlg.core.model.Title;
+
 import com.findlg.core.model.datapoint;
 import com.findlg.core.model.datapoints;
 
@@ -69,15 +72,20 @@ public class RestControler {
 		return new ResponseEntity<>(application, HttpStatus.OK);
 
 	}
-
+	@GetMapping(path = "/getJSON", produces = { MediaType.APPLICATION_JSON_VALUE })
+	@RequestMapping("/getDATA")
+public List<Category> getDATA()
+{
+	return Arrays.asList(new Category("category-1",20),new Category("category-2",20),
+			new Category("category-3",20),new Category("category-4",20),new Category("category-5",20));
+	
+}
 	
 	//@GetMapping(path = "/getJSON", produces = { MediaType.APPLICATION_JSON_VALUE })
 	@RequestMapping("/getALL")
 	public List<datapoint> getAll()
 	{
-		Datap dataprovider=new Datap();
-		dataprovider.setDataprovider("dataprovider");
-		//dataprovider.setDataprovider(dataprovider);
+		
 	return Arrays.asList(new datapoint("2012-07-27",13),new datapoint("2012-07-28",11),
 			new datapoint("2012-07-29",15),new datapoint("2012-07-30",16),new datapoint("2012-07-31",18),
 			new datapoint("2012-08-01",13),new datapoint("2012-08-02",22),new datapoint("2012-08-03",23),

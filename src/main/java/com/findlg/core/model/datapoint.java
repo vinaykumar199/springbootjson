@@ -3,6 +3,7 @@ package com.findlg.core.model;
 public class datapoint {
 private String date;
 private int value;
+
 public String getDate() {
 	return date;
 }
